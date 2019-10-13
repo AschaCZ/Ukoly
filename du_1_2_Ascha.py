@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # vytvorit program kde:
 			# definuji 2 funkce
 			# pouziji cyklus
@@ -10,9 +13,6 @@
 # 3) 2 tahy
 # 4) vyuzit if - bonus
 # přidej nějaké formátování, aby to nevypadalo tak jednotvářně - nadpis u tahu i bonusu, odsazení (prázdný print)
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import random
 import time
@@ -39,7 +39,7 @@ def losovani():
 	time.sleep(0.5)
 
 '''
-# Vybrání bonusu z vylosovaných čísel - nefunguje
+# Vybrání bonusu z vylosovaných čísel - nefunguje, bere jen poslední číslo
 
 def bonus_cislo():
 	win = [11, 22, 33, 44, 55, 66, 77, 88, 99]
@@ -63,14 +63,22 @@ def bonus():
 # Odhad uživatele
 def odhad():
 
-	odhad = int(input('Vložte Váš odhad bonusového čísla: '))
+	while True:
 
-	print('...')
-	time.sleep(0.5)
-	print('...')
-	time.sleep(0.5)
-	
-	return odhad
+		odhad = int(input('Vložte Váš odhad bonusového čísla od 1 do 100: '))
+
+		if odhad >= 1 and odhad <= 100:
+			
+			print('...')
+			time.sleep(0.5)
+			print('...')
+			time.sleep(0.5)
+
+			break
+
+			return odhad
+		else:
+			print('Tohle není správně zadané číslo!')
 
 # porovnání	
 def user_bonus():
@@ -86,7 +94,7 @@ def user_bonus():
 
 def __main__():
 
-	print('Vítejte při dnešním losování sportky. Jako každý den losujeme 2 tahy po pěti číslech a také Vás neochudíme o bonusový tah!')
+	print('Vítejte při dnešním losování sportky. \n Jako každý den losujeme 2 tahy po pěti číslech a také Vás neochudíme o bonusový tah!')
 	
 	for tah in range(1,3):
 		format(f'{tah}.', 1)
