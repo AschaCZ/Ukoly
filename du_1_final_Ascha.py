@@ -55,7 +55,7 @@ def __main__():
 
     hello()
     
-    user_number = user_input("Tak jaké číslo si myslíš že dneska vylosujeme?  ")
+    user_number = user_input("Tak jaké číslo mezi 1 a 100 si myslíš že dneska vylosujeme?  ")
 
     #print(user_number)    
 
